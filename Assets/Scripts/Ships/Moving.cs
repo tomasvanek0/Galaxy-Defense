@@ -9,7 +9,7 @@ public class PhysicsMoveToTarget : MonoBehaviour
 
     void Start()
     {
-        speed = Random.Range(1f, 8f);
+        speed = Random.Range(1f, 3f);
 
         GameObject[] gos = GameObject.FindGameObjectsWithTag("SpawnSpot");
 
@@ -37,14 +37,6 @@ public class PhysicsMoveToTarget : MonoBehaviour
         if (gravity != null)
         {
             Vector2 pullForce = gravity.GravityEffect(transform);
-
-            if (collision.CompareTag("Player"))
-            {
-                // Zastavení pohybu objektu, pokud je v kolizi s objektem "SpawnSpot"
-                Debug.Log($"Působí síla: {pullForce} na objekt {gameObject.name}");
-
-            }
-            // Kontrolní výpis do konzole:
 
             rb.AddForce(pullForce, ForceMode2D.Force);
         }

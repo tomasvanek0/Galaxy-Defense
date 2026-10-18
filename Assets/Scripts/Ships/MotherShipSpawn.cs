@@ -3,7 +3,7 @@ using UnityEngine;
 public class MotherShipSpawn : MonoBehaviour
 {
     public Transform ship;
-    public Transform[] spawnPoints;
+    public Transform spawnPoint;
 
     public float spawnTime = 1f;
     private float timer = 0f;
@@ -24,8 +24,7 @@ public class MotherShipSpawn : MonoBehaviour
             {
                 i++;
                 timer = 0f;
-                int pos = Random.Range(0, spawnPoints.Length);
-                Instantiate(ship);
+                Instantiate(ship, spawnPoint.position, spawnPoint.rotation);
             }
             else
             {
