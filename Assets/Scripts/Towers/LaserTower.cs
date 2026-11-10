@@ -46,7 +46,6 @@ public class LaserTower : MonoBehaviour
             return;
         }
 
-        Debug.Log("Closest Enemy: " + closestEnemy.name);
         Laser.enabled = true;
         Laser.SetPosition(0, transform.position);
         Laser.SetPosition(1, closestEnemy.transform.position);

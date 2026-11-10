@@ -4,6 +4,7 @@ public class MotherShipSpawn : MonoBehaviour
 {
     public Transform ship;
     public Transform spawnPoint;
+    public Transform EnemyParrent;
 
     public float spawnTime = 1f;
     private float timer = 0f;
@@ -24,11 +25,14 @@ public class MotherShipSpawn : MonoBehaviour
             {
                 i++;
                 timer = 0f;
-                Instantiate(ship, spawnPoint.position, spawnPoint.rotation);
+                Instantiate(ship, spawnPoint.position, spawnPoint.rotation, EnemyParrent);
+                
             }
             else
             {
-                return;
+                GameManager.Instance.GameState = false;
+                GameManager.Instance.TowerPlacementMode = true;
+
             }
             
 

@@ -6,6 +6,10 @@ TagManager:
   tags:
   - SpawnSpot
   - Star
+  - Enemy
+  - Radius
+  - Tower
+  - TowerMenui
   layers:
   - Default
   - TransparentFX
